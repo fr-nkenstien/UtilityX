@@ -49,18 +49,46 @@ public class PDFExtractor {
         PdfReaderContentParser parser = new PdfReaderContentParser(reader);
         TextExtractionStrategy strategy;
         strategy = parser.processContent(100, new SimpleTextExtractionStrategy());
-        String s=strategy.getResultantText();
-        String[] splited=s.split("\n");
+        String s = strategy.getResultantText();
+        String[] splited = s.split("\n");
         for (String s1 : splited) {
-            System.out.println("-->"+s1);
-       }
-//        System.out.println(s);
+            System.out.println("-->" + s1);
+        }
+        //        System.out.println(s);
 
-//        for (int i = 1; i <= reader.getNumberOfPages(); i++) {
-//        }
+        //        for (int i = 1; i <= reader.getNumberOfPages(); i++) {
+        //        }
         //        /** The resulting text file. */
         //        String destination = "C:\\Users\\Vineet\\Downloads\\oc\\tmp\\out\\MongoDB in Action.txt";
 
         //        new PDFExtractor().parsePdf(source, destination);
+    }
+
+    public void countWords(String text) {
+        String[] splitter;
+        int[] counter;
+
+        // replace any grammatical characters and split the String into an array
+        splitter = text.replaceAll("[.,?!:;/]", "").split(" ");
+        String temp = "";
+        // intialize an int array to hold count of each word
+        counter = new int[splitter.length];
+
+        // loop through the sentence
+        for (int i = 0; i < splitter.length; i++) {
+
+            // hold current word in the sentence in temp variable
+            temp = splitter[i];
+
+            // inner loop to compare current word with those in the sentence
+            // incrementing the counter of the adjacent int array for each match
+            for (int k = 0; k < splitter.length; k++) {
+
+                if (temp.equalsIgnoreCase(splitter[k])) {
+                    counter[k]++;
+                }
+            }
+        }
+
     }
 }

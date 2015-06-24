@@ -1,0 +1,5 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProviderSettings xmlns="http://xmlns.oracle.com/ide/hash">
+   <value n="id" v="15d631bb-d42c-421b-8cd7-2e88c7404ad6"/>
+   <value n="name" v="JARSPEM-DB"/>
+</ProviderSettings>
