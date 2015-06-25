@@ -54,13 +54,5 @@ public class PDFExtractor {
         for (String s1 : splited) {
             System.out.println("-->"+s1);
        }
-//        System.out.println(s);
-
-//        for (int i = 1; i <= reader.getNumberOfPages(); i++) {
-//        }
-        //        /** The resulting text file. */
-        //        String destination = "C:\\Users\\Vineet\\Downloads\\oc\\tmp\\out\\MongoDB in Action.txt";
-
-        //        new PDFExtractor().parsePdf(source, destination);
     }
 }
