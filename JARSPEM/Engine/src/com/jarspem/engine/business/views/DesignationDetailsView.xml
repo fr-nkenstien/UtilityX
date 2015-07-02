@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DesignationDetailsView"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  SelectList="DesignationDetails.DESIG_ID, 
+       DesignationDetails.DESIG_CODE, 
+       DesignationDetails.DESIG_NAME, 
+       DesignationDetails.TIER_CODE, 
+       DesignationDetails.COST_PR_PM, 
+       DesignationDetails.COST_TO_CUST, 
+       DesignationDetails.STATUS"
+  FromList="DESIGNATION_DETAILS DesignationDetails"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="DesignationDetails"
+    Entity="com.jarspem.engine.business.entities.DesignationDetails"/>
+  <ViewAttribute
+    Name="DesigId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DesigId"
+    EntityUsage="DesignationDetails"
+    AliasName="DESIG_ID"/>
+  <ViewAttribute
+    Name="DesigCode"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DesigCode"
+    EntityUsage="DesignationDetails"
+    AliasName="DESIG_CODE"/>
+  <ViewAttribute
+    Name="DesigName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DesigName"
+    EntityUsage="DesignationDetails"
+    AliasName="DESIG_NAME"/>
+  <ViewAttribute
+    Name="TierCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TierCode"
+    EntityUsage="DesignationDetails"
+    AliasName="TIER_CODE"/>
+  <ViewAttribute
+    Name="CostPrPm"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CostPrPm"
+    EntityUsage="DesignationDetails"
+    AliasName="COST_PR_PM"/>
+  <ViewAttribute
+    Name="CostToCust"
+    PrecisionRule="true"
+    EntityAttrName="CostToCust"
+    EntityUsage="DesignationDetails"
+    AliasName="COST_TO_CUST"/>
+  <ViewAttribute
+    Name="Status"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Status"
+    EntityUsage="DesignationDetails"
+    AliasName="STATUS"/>
+  <ViewLinkAccessor
+    Name="ResourceDetailsView"
+    ViewLink="com.jarspem.engine.business.links.ResourceDetailsFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

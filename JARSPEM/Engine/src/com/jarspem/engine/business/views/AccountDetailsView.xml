@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AccountDetailsView"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  SelectList="AccountDetails.AID, 
+       AccountDetails.ACC_CODE, 
+       AccountDetails.ACC_NAME, 
+       AccountDetails.START_DATE, 
+       AccountDetails.END_DATE, 
+       AccountDetails.STATUS"
+  FromList="ACCOUNT_DETAILS AccountDetails"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="AccountDetails"
+    Entity="com.jarspem.engine.business.entities.AccountDetails"/>
+  <ViewAttribute
+    Name="Aid"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Aid"
+    EntityUsage="AccountDetails"
+    AliasName="AID"/>
+  <ViewAttribute
+    Name="AccCode"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AccCode"
+    EntityUsage="AccountDetails"
+    AliasName="ACC_CODE"/>
+  <ViewAttribute
+    Name="AccName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AccName"
+    EntityUsage="AccountDetails"
+    AliasName="ACC_NAME"/>
+  <ViewAttribute
+    Name="StartDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="AccountDetails"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="AccountDetails"
+    AliasName="END_DATE"/>
+  <ViewAttribute
+    Name="Status"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Status"
+    EntityUsage="AccountDetails"
+    AliasName="STATUS"/>
+  <ViewLinkAccessor
+    Name="ProjectDetailsView"
+    ViewLink="com.jarspem.engine.business.links.ProjectDetailsFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

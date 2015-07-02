@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProjectDetails"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="PROJECT_DETAILS"
+  AliasName="ProjectDetails"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Pid"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="PID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PROJECT_DETAILS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Aid"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="AID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PROJECT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjCode"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="PROJ_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjName"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="PROJ_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjType"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="PROJ_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StartDate"
+    IsNotNull="true"
+    ColumnName="START_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="PROJECT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EndDate"
+    ColumnName="END_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="PROJECT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Status"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECT_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="AccountDetails"
+    Association="com.jarspem.engine.business.associations.ProjectDetailsFk1Assoc"
+    AssociationEnd="com.jarspem.engine.business.associations.ProjectDetailsFk1Assoc.AccountDetails"
+    AssociationOtherEnd="com.jarspem.engine.business.associations.ProjectDetailsFk1Assoc.ProjectDetails"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SprintDetails"
+    Association="com.jarspem.engine.business.associations.SprintDetailsFk1Assoc"
+    AssociationEnd="com.jarspem.engine.business.associations.SprintDetailsFk1Assoc.SprintDetails"
+    AssociationOtherEnd="com.jarspem.engine.business.associations.SprintDetailsFk1Assoc.ProjectDetails"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ProjectDetailsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PROJECT_DETAILS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.jarspem.engine.business.entities.ProjectDetails.Pid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjectDetailsUk1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJECT_DETAILS_UK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="com.jarspem.engine.business.entities.ProjectDetails.ProjCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005507">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005507"/>
+      <Attr Name="_checkCondition" Value='"PID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.jarspem.engine.business.entities.ProjectDetails.Pid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005508">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005508"/>
+      <Attr Name="_checkCondition" Value='"AID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.jarspem.engine.business.entities.ProjectDetails.Aid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005509">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005509"/>
+      <Attr Name="_checkCondition" Value='"PROJ_CODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="com.jarspem.engine.business.entities.ProjectDetails.ProjCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005510">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005510"/>
+      <Attr Name="_checkCondition" Value='"PROJ_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="com.jarspem.engine.business.entities.ProjectDetails.ProjName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005511">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005511"/>
+      <Attr Name="_checkCondition" Value='"PROJ_TYPE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="com.jarspem.engine.business.entities.ProjectDetails.ProjType"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005512">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005512"/>
+      <Attr Name="_checkCondition" Value='"START_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="com.jarspem.engine.business.entities.ProjectDetails.StartDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005513">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005513"/>
+      <Attr Name="_checkCondition" Value='"STATUS" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.jarspem.engine.business.entities.ProjectDetails.Status"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjectDetailsFk1">
+    <DesignTime>
+      <Attr Name="_isCascadeDelete" Value="true"/>
+      <Attr Name="_referencedKey" Value="ACCOUNT_DETAILS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJECT_DETAILS_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.jarspem.engine.business.entities.ProjectDetails.Aid"/>
+    </AttrArray>
+  </Key>
+</Entity>

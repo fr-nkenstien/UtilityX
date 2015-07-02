@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ResourceDetails"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  DBObjectType="table"
+  DBObjectName="RESOURCE_DETAILS"
+  AliasName="ResourceDetails"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Rid"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="RID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="RESOURCE_DETAILS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ResourceCode"
+    IsUnique="true"
+    Precision="10"
+    ColumnName="RESOURCE_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="RESOURCE_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ResourceName"
+    Precision="10"
+    ColumnName="RESOURCE_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="RESOURCE_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DesigId"
+    Precision="10"
+    Scale="0"
+    ColumnName="DESIG_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="RESOURCE_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="11"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AllocPerc"
+    Precision="10"
+    Scale="2"
+    ColumnName="ALLOC_PERC"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="RESOURCE_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="12"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ResourceType"
+    Precision="10"
+    ColumnName="RESOURCE_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="RESOURCE_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StartDate"
+    ColumnName="START_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="RESOURCE_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EndDate"
+    ColumnName="END_DATE"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="RESOURCE_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Status"
+    Precision="1"
+    ColumnName="STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="RESOURCE_DETAILS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="ResourceAllocationDetails"
+    Association="com.jarspem.engine.business.associations.ResourceAllocationDetaiFk1Assoc"
+    AssociationEnd="com.jarspem.engine.business.associations.ResourceAllocationDetaiFk1Assoc.ResourceAllocationDetails"
+    AssociationOtherEnd="com.jarspem.engine.business.associations.ResourceAllocationDetaiFk1Assoc.ResourceDetails"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="DesignationDetails"
+    Association="com.jarspem.engine.business.associations.ResourceDetailsFk1Assoc"
+    AssociationEnd="com.jarspem.engine.business.associations.ResourceDetailsFk1Assoc.DesignationDetails"
+    AssociationOtherEnd="com.jarspem.engine.business.associations.ResourceDetailsFk1Assoc.ResourceDetails"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ResourceSkillMapping"
+    Association="com.jarspem.engine.business.associations.ResourceSkillMappingFk1Assoc"
+    AssociationEnd="com.jarspem.engine.business.associations.ResourceSkillMappingFk1Assoc.ResourceSkillMapping"
+    AssociationOtherEnd="com.jarspem.engine.business.associations.ResourceSkillMappingFk1Assoc.ResourceDetails"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SprintDetails"
+    Association="com.jarspem.engine.business.associations.SprintDetailsFk2Assoc"
+    AssociationEnd="com.jarspem.engine.business.associations.SprintDetailsFk2Assoc.SprintDetails"
+    AssociationOtherEnd="com.jarspem.engine.business.associations.SprintDetailsFk2Assoc.ResourceDetails"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SprintDetails1"
+    Association="com.jarspem.engine.business.associations.SprintDetailsFk3Assoc"
+    AssociationEnd="com.jarspem.engine.business.associations.SprintDetailsFk3Assoc.SprintDetails1"
+    AssociationOtherEnd="com.jarspem.engine.business.associations.SprintDetailsFk3Assoc.ResourceDetails1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="ResourceDetailsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="RESOURCE_DETAILS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.jarspem.engine.business.entities.ResourceDetails.Rid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ResourceDetailsUk1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="RESOURCE_DETAILS_UK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="com.jarspem.engine.business.entities.ResourceDetails.ResourceCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC005525">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C005525"/>
+      <Attr Name="_checkCondition" Value='"RID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.jarspem.engine.business.entities.ResourceDetails.Rid"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ResourceDetailsFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="DESIGNATION_DETAILS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="RESOURCE_DETAILS_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="com.jarspem.engine.business.entities.ResourceDetails.DesigId"/>
+    </AttrArray>
+  </Key>
+</Entity>
