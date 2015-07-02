@@ -9,9 +9,19 @@
         <af:panelSplitter orientation="horizontal" splitterPosition="100"
                           id="ps1">
           <f:facet name="first">
-            <af:forEach>
-              <af:commandLink text="commandLink 1" id="cl1"/>
-            </af:forEach>
+            <af:panelGroupLayout id="pgl3" halign="center">
+              <af:outputText value="JARSPEM Menu" id="ot1"/>
+              <af:panelList id="pl1">
+                <af:forEach items="#{pageFlowScope.jarspemBean.menuList}"
+                            var="item">
+                  <af:commandLink text="#{item.label}" id="cl1"
+                                  actionListener="#{pageFlowScope.jarspemBean.menuLinkAL}"
+                                  immediate="true">
+                    <f:attribute name="link" value="#{item.link}"/>
+                  </af:commandLink>
+                </af:forEach>
+              </af:panelList>
+            </af:panelGroupLayout>
           </f:facet>
           <f:facet name="second">
             <af:decorativeBox theme="dark" id="db3">
@@ -31,6 +41,17 @@
                           <af:decorativeBox theme="default" id="db1">
                             <f:facet name="center">
                               <!-- Content -->
+                              <af:panelGroupLayout id="pgl2">
+                                <af:panelTabbed id="pt1"
+                                                binding="#{pageFlowScope.jarspemBean.mainFrame}">
+                                  <af:showDetailItem text="Dashboard" id="sdi1">
+                                    <af:panelGroupLayout id="pgl4">
+                                      <af:outputText value="outputText1"
+                                                     id="ot2"/>
+                                    </af:panelGroupLayout>
+                                  </af:showDetailItem>
+                                </af:panelTabbed>
+                              </af:panelGroupLayout>
                             </f:facet>
                           </af:decorativeBox>
                         </af:gridCell>

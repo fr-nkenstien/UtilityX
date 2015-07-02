@@ -1,8 +1,10 @@
 package com.jarspem.view.bean.dto;
 
 public class MenuItem {
-    public MenuItem() {
+    public MenuItem(String label, String link) {
         super();
+        setLabel(label);
+        setLink(link);
     }
 
     private String label, link;
